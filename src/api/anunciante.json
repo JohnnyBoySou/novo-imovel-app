@@ -1,0 +1,16 @@
+[
+    {
+        "foto":"https://s2hentais.com/novoimovel/wp-content/uploads/2021/10/jonathan-borba-hkCh2aHw2Dw-unsplash-1.jpg",
+        "nome": "João Victor",
+        "email": "joaodesousa101@gmail.com",
+        "descricao:" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+        "endereco": "endereco",
+        "latitude": "latitude",
+        "longitude": "longitude",
+        "user_ID": 2,
+        "verificado": "verificado",
+        "telefone_comercial": "",
+        "whatsapp": ""
+
+    }
+]

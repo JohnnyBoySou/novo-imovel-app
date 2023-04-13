@@ -1,0 +1,37 @@
+
+import MapboxGL from '@react-native-mapbox-gl/maps';
+MapboxGL.setAccessToken('pk.eyJ1Ijoiam9hb2Rlc291c2EyMSIsImEiOiJjbDZlM3BqMjMwMnJ3M2NvYXJwdWk5M2RoIn0.SuRNU78Z1ub0KS0xIIs5Yw');
+
+
+
+<MapboxGL.MapView
+      styleURL={MapboxGL.StyleURL.Street}
+      zoomLevel={15}
+      centerCoordinate={[-122.4324, 37.78825]}>
+
+
+      {feed.map((feed) => (
+        <MapboxGL.PointAnnotation
+          key={feed.ID}
+          id={feed.ID}
+          coordinate={[feed?.latitude, feed?.longitude]}
+        /> ))}
+    </MapboxGL.MapView>
+
+
+     const [fontsLoaded] = useFonts({
+    Font_Book: require('../assets/fonts/Circular_Book.ttf'),
+    Font_Medium: require('../assets/fonts/Circular_Medium.ttf'),
+    Font_Bold:  require('../assets/fonts/Circular_Bold.ttf'),
+    Font_Black: require('../assets/fonts/Circular_Black.ttf'),
+  });
+
+  const onLayoutRootView =  React.useCallback(async () => {
+    if (fontsLoaded) {
+      await SPScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }

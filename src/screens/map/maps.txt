@@ -1,0 +1,91 @@
+ const mapview = useRef()
+  function anim(){
+    mapview.current.animateCamera({
+      center: {
+        latitude: latitude,
+        longitude: longitude
+      }, 
+        zoom: 18,
+        heading: 0,
+        pitch: 0,
+        altitude: 10
+      }, { duration: 800 })
+  } 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <MapView
+        style={{width: width, height: 1.048 * height, borderRadius: 12,}}
+        showsPointsOfInterest={false}
+
+        ref={mapview}
+
+        customMapStyle={{overflow: 'hidden', borderRadius: 12,}}
+
+        initialRegion={{
+          latitude: latitude,
+          longitude: longitude,
+          latitudeDelta: 0.0099000,
+          longitudeDelta: 0.0045000,
+        }}
+        provider="google"
+      >
+      <Marker onPress={onOpen} coordinate={{latitude: latitude, longitude: longitude,}} pinColor={color.primary}>
+        <Callout tooltip={true}>            
+            <View style={{borderRadius: 8, backgroundColor: "#fff", width: 250, marginBottom: 5,}}>
+              <View style={{borderRadius: 12,}}>
+                <Svg width={250} height={160} >
+                  <ImageSvg
+                      style={{borderTopRightRadius: 12,}}
+                      width={'100%'} 
+                      height={'100%'}
+                      preserveAspectRatio="xMidYMid slice"
+                      href={{ uri: dados.imagem1}}
+                  />
+                </Svg>
+              </View>
+            
+            <TouchableRipple style={{borderTopLeftRadius: 8, borderTopRightRadius: 8, position: 'absolute', top: 5, right: 5,}} rippleColor="#303030" borderless={true}>
+              <Chip>      
+                <>
+                {dados.tipo == "Ambos" && 
+                <Valor style={{fontSize: 18,}}>R$ {dados.valor_mensal} / R$ {dados.valor_unico}</Valor> }
+                {dados.tipo != "Ambos" && 
+                <Valor style={{fontSize: 18,}}>R$ {dados.valor_mensal}{dados.valor_unico}</Valor> }
+                </>
+              </Chip>
+            </TouchableRipple>
+     
+          <Description>
+            <Title>{dados.nome}</Title>
+            <Address>{dados.rua}, {dados.numero} - {dados.bairro}</Address>
+          </Description> 
+          </View>
+            <View style={{alignSelf: 'center', marginTop: -10, marginBottom: 10,}}>
+              <Svg width={44} height={20}>
+                <ImageSvg style={{borderTopRightRadius: 12,}} width={'100%'} height={'100%'} preserveAspectRatio="xMidYMid slice" href={require('../../assets/indicator.png')}/>
+              </Svg>
+            </View>
+        
+      </Callout>
+      
+          
+        </Marker>
+        <Circle center={{
+          latitude: latitude,
+          longitude: longitude,
+        }} radius={25} 
+        
+        fillColor="#5B72F220" 
+        strokeColor={color.primary}
+        strokeWidth={5}
+        />
+      
+      </MapView>

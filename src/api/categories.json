@@ -1,0 +1,16 @@
+[
+    {"name": "Casa", "color": "#DE7C5A"}, 
+    {"name": "Apartamento", "color": "#4ECDC4"},
+    {"name": "Casa Comercial", "color": "#FF6B6B"},
+    {"name": "Chácara", "color": "#0E1C36"},
+    {"name": "Cobertura", "color": "#0E1C36"},
+    {"name": "Galpão", "color": "#83A0A0"},
+    {"name": "Geminado", "color": "#E55381"},
+    {"name": "Prédio Comercial", "color": "#190B28"},
+    {"name": "Sala Comercial", "color": "#78A1BB"},
+    {"name": "Sítio", "color": "#684E32"},
+    {"name": "Sobrado", "color": "#758BFD"},
+    {"name": "Terreno", "color": "#27187E"},
+    {"name": "Kitnet", "Color": "#45B69C"}
+  ]
+  
